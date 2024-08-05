@@ -1,2 +1,2 @@
 [phases.setup]
-nixPkgs = ['mkcert', 'jq', 'nodejs_20']
+nixPkgs = ['mkcert', 'jq', 'nodejs_20', 'docker-compose']
