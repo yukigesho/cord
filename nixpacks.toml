@@ -1,2 +1,2 @@
 [phases.setup]
-nixPkgs = ['mkcert', 'jq', 'nodejs', 'npm']
+nixPkgs = ['mkcert', 'jq', 'nodejs_20']
