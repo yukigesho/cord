@@ -1,0 +1,4 @@
+providers = ['nodejs']
+
+[phases.setup]
+nixPkgs = ['mkcert', 'jq']
