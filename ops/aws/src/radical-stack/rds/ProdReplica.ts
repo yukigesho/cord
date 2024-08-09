@@ -105,8 +105,8 @@ export const prodReplicaSecurityGroup = define(() => {
 export const prodReplicaExternalSecurityGroup = define(() =>
   EC2.SecurityGroup.fromSecurityGroupId(
     radicalStack(),
-    'sg-prod-replica-external',
-    'sg-045134e80da8c2ee5',
+    'prod-replica-external',
+    'sg-022d491b58731fa21',
   ),
 );
 
@@ -114,7 +114,7 @@ const subnetGroup = define(() =>
   RDS.SubnetGroup.fromSubnetGroupName(
     radicalStack(),
     'prod-replica-subnets',
-    'default',
+    'default-vpc-091eacfe30411bd9e',
   ),
 );
 

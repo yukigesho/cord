@@ -14,7 +14,7 @@ export const OPS_NOTIFICATION_EMAIL = 'my-gmail@gmail.com';
 
 // S3 bucket names have to be globally unique, so prefix all bucket names with
 // this string
-export const S3_BUCKET_PREFIX = 'new-cord-s3-last-one';
+export const S3_BUCKET_PREFIX = 'cord-api-';
 
 // AWS sets up a default VPC and security group in each region, and you're not
 // able to create replacements with exactly the same properties in CF, so
@@ -28,64 +28,31 @@ export const DEFAULT_PUBLIC_SUBNET_C_ID = 'subnet-0f918153e3b5dd083';
 export const DEFAULT_VPC_ID_US_EAST_1 = 'vpc-09e10bf6f20d2f32b';
 
 // all the domains under which we serve the product
-export const CORD_COM_DOMAINS = [
-  '001048.xyz',
-  'getradical.co',
-  'cord.so',
-  'cord.fyi',
-];
+export const CORD_COM_DOMAINS = ['001048.xyz'];
 
 // The domain name we want all requests to be redirected to, and that serves as
 // the base for all other domains (eg, api., app.)
 export const PRIMARY_DOMAIN_NAME = CORD_COM_DOMAINS[0];
 
 // domains for which we set up gmail
-export const GMAIL_DOMAINS = ['001048.xyz', 'cord.so', 'getradical.co'];
+export const GMAIL_DOMAINS = ['001048.xyz'];
 
 // Domain TXT records, for Google site verification and such things
 export const TXT_RECORDS = {
-  'getradical.co': [
-    'google-site-verification=BtgOe3c6_AitAdNHNDU-2dedVumtkfO5OAHpnUNrEyM',
-  ],
   '001048.xyz': [
     'google-site-verification=o0E3i6wuU7HmxGIf_D7jLS089pFF7l19xfj8OebZ8ds',
     'google-site-verification=33uewWcG3InRmPHAs8TUHCjGTHZonvQzd7MxjPZSaEo',
     'OSSRH-82140',
     'ahrefs-site-verification_4b6190ed0dbc98695c8737c1ad9070106203ccfca7f7cd1f309a73010d2cf744',
   ],
-  'cord.so': [
-    'google-site-verification=gjiL3OQHqmQnYx7KyujYpX29mEvyyxnCwfRfIMwr1cQ',
-  ],
 };
 
 // Domain keys for DKIM
 export const DOMAIN_KEYS = {
-  'getradical.co': {
-    // google = Google (our email)
-    google:
-      'v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA9UaUXI2l/R6DevMnY5lLzBGSmaK3sS5l1TGNMTu/oSlPTEaNJyiDt3b3zNrmoqWpMziPL6O5WwAG+l8CowD7gAnvjHujrIcPyP+EQ2k7+wh2pHk7prgITmTurljQKi2VedEfbRyT4u7UFctazXU0k4axUZGIjiQwrEAWR4ubgg9KEhZrFWPszOKeHTUsF9KahoasIJoPFfDS1FAiDYJcMDXAKg+4RjKM9aH42ADHht/gx98oQe4uwtJuCmfo/IvS5txTdRZMBeQ8Aip4jRRzqzdJVTTzsCE6eOnlsHyIpfWVtHK8uO41Est2s76EhpikVGt3NMRdsbHiJNgVYmmaCwIDAQAB',
-  },
   '001048.xyz': {
     // google = Google (our email)
     google:
       'v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiwzgkiUn2tEnh417+3ate4MfoK72XsUU2PKXAyQ8BOzmb3AcpnrYcyafFLWGxSZfFvai3F2PcRGe02JWDq2+x7YlS/JICm6vyyofM/F1qu1/YZv2+7xNyDEx0R2ccQGgOXrczX2ecWu7aHnCRWgQB0UtKE/78OYXEvoKeSQnFjmeY2v4KGu1W35gQ9o7Y44jNJrXKrsPTV+iIwuoaqh/F2zsDBgt0izEiiQcSaNJyXx3RKinQDhlKMTCR9gM4yQ4Zmi+S+M4BrZZ6WZD0P1sBiO5vfs4k7zCwWr2c+MLYwPIexw12T6socOtqcAjoHLkZ3gYHCGzNIz3Ct6aM/is4wIDAQAB',
-  },
-  'cord.so': {
-    // google = Google (our email)
-    // random strings: ...amazonses.com = Loops (marketing)
-    google:
-      'v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAn/NFJgjIFscAVGv8jbgDL0wr+Dh3nJxKAyxy31FyhEzUIJYwEtR9KyQXWeAO7D/sCEQ7dA+Dqum6kuiLc/OSFg4vu8bkYkQb0Vw5+2eQbTKoh/DQ5ju8Txiudd0r0SzQGx7YWzmJcfLPe1Jqa4AaYraZRCLyRDbfdg9bhOxaLJ+aUbX7xZVPEL35RfkW2Stlf3Ny7rl25bHRPFUnJQJflOkldXLZyRknXGP3s6eCXoAH84WVNr5XjPbUEUFwS9/TbDj7QKcQIcAPwRPH8/4arvw2j8nSzZHpVidIVyPO+J8ToUnRia33JT6uvqgsE3jBEQTSJyFOGNXiJ8eu8G/SZQIDAQAB',
-    gw7lwwllla3tk33rzzpi4pkk7b7vzw65:
-      'CNAME:gw7lwwllla3tk33rzzpi4pkk7b7vzw65.dkim.amazonses.com.',
-    jgxjf2ny7ruwqsflekpn27zft64maxn7:
-      'CNAME:jgxjf2ny7ruwqsflekpn27zft64maxn7.dkim.amazonses.com.',
-    wwmfgpjwizpjhbulmahzlx65e22z6oko:
-      'CNAME:wwmfgpjwizpjhbulmahzlx65e22z6oko.dkim.amazonses.com.',
-  },
-  'cord.fyi': {
-    // s1, s2 = Sendgrid (product notifications)
-    s1: 'CNAME:s1.domainkey.u16847044.wl045.sendgrid.net',
-    s2: 'CNAME:s2.domainkey.u16847044.wl045.sendgrid.net',
   },
 };
 
@@ -100,11 +67,6 @@ export const SPF_RECORDS: SpfType = {
   // sendgrid.net = Sendgrid (product notifications)
   default: 'v=spf1 include:_spf.google.com ~all',
   '001048.xyz': 'v=spf1 include:_spf.google.com ~all',
-  'cord.so': {
-    '@': 'v=spf1 include:_spf.google.com ~all',
-    envelope: 'v=spf1 include:amazonses.com ~all',
-  },
-  'cord.fyi': 'v=spf1 include:sendgrid.net -all',
 };
 
 // CI/CD values

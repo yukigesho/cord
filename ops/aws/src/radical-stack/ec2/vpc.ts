@@ -25,14 +25,14 @@ export const defaultVpc = define(() => {
 export const publicSubnetA = define(() =>
   EC2.PublicSubnet.fromSubnetAttributes(radicalStack(), 'public-subnet-a', {
     subnetId: DEFAULT_PUBLIC_SUBNET_A_ID,
-    ipv4CidrBlock: '172.31.16.0/20',
+    ipv4CidrBlock: '172.31.32.0/20',
     availabilityZone: `${AWS_REGION}a`,
   }),
 );
 export const publicSubnetB = define(() =>
   EC2.PublicSubnet.fromSubnetAttributes(radicalStack(), 'public-subnet-b', {
     subnetId: DEFAULT_PUBLIC_SUBNET_B_ID,
-    ipv4CidrBlock: '172.31.32.0/20',
+    ipv4CidrBlock: '172.31.16.0/20',
     availabilityZone: `${AWS_REGION}b`,
   }),
 );
