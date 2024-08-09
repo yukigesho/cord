@@ -42,7 +42,7 @@ export const cordComZones = define(() => {
     Config.CORD_COM_DOMAINS.map((domain) => {
       const zone = new Route53.PublicHostedZone(
         radicalStack(),
-        `${domain}-zone`,
+        `test-${domain}-zone`,
         {
           zoneName: domain,
         },

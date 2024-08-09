@@ -53,7 +53,7 @@ docker run --rm=true \
     dist/generic/scripts/ci/deploy.js \
         --force \
         --pullImage "$image" \
-        --pushOnSuccess 869934154475.dkr.ecr.eu-west-2.amazonaws.com/server:"$tier"
+        --pushOnSuccess 026090525299.dkr.ecr.us-west-2.amazonaws.com/server:"$tier"
 
 commit_hash="$(
     docker image inspect "$image" |

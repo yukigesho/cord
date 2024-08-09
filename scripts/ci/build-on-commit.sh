@@ -6,7 +6,7 @@
 
 . scripts/ci/common.sh
 
-ECR_REGISTRY="869934154475.dkr.ecr.eu-west-2.amazonaws.com"
+ECR_REGISTRY="026090525299.dkr.ecr.us-west-2.amazonaws.com"
 ECR_REPO="$ECR_REGISTRY/server"
 export CORD_SERVER_DOCKER_IMAGE_NAME="$ECR_REPO":latest
 

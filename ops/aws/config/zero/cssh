@@ -7,6 +7,7 @@ import socket
 import subprocess
 import sys
 
+
 def doconnect(args, user, instance):
     cmd = ['mssh', '-o', 'StrictHostKeyChecking=accept-new']
 
@@ -28,11 +29,13 @@ def doconnect(args, user, instance):
     finish = subprocess.run(cmd)
     sys.exit(finish.returncode)
 
+
 def getHostOrNone(host):
     try:
         return socket.gethostbyname(host)
     except socket.gaierror:
         return None
+
 
 def main():
     parser = argparse.ArgumentParser(description='Connect to Cord instances')
@@ -65,14 +68,17 @@ def main():
     if instance.startswith('i-'):
         doconnect(args, user, instance)
     else:
-        ip = getHostOrNone(instance) or getHostOrNone(instance + ".int.cord.com")
+        ip = getHostOrNone(instance) or getHostOrNone(
+            instance + ".int.001048.xyz")
         is_private = ipaddress.ip_address(ip).is_private
         key = 'private-ip-address' if is_private else 'ip-address'
-        instances = list(ec2.instances.filter(Filters=[{'Name': key, 'Values': [ip]}]))
+        instances = list(ec2.instances.filter(
+            Filters=[{'Name': key, 'Values': [ip]}]))
         if len(instances) == 1:
             doconnect(args, user, instances[0].id)
         else:
             print("Could not find any matching instance", file=sys.stderr)
-    
+
+
 if __name__ == '__main__':
     main()

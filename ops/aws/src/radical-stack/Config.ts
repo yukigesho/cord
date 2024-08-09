@@ -1,35 +1,35 @@
 import type { Tier } from 'ops/aws/src/common.ts';
 
 // AWS Environment values
-export const AWS_REGION = 'eu-west-2';
+export const AWS_REGION = 'us-west-2';
 
 // Default resource owner, used for tagging resources with tags that Vanta reads
-export const DEFAULT_OWNER = 'dmmiller@cord.com';
+export const DEFAULT_OWNER = 'my-gmail@gmail.com';
 
 // The user group that is allowed to ssh to EC2 instances
 export const EC2_INSTANCE_CONNECT_GROUP = 'engineering';
 
 // The email address to send ops notifications to
-export const OPS_NOTIFICATION_EMAIL = 'YOUR_EMAIL_HERE';
+export const OPS_NOTIFICATION_EMAIL = 'my-gmail@gmail.com';
 
 // S3 bucket names have to be globally unique, so prefix all bucket names with
 // this string
-export const S3_BUCKET_PREFIX = '';
+export const S3_BUCKET_PREFIX = 'new-cord-s3-last-one';
 
 // AWS sets up a default VPC and security group in each region, and you're not
 // able to create replacements with exactly the same properties in CF, so
 // instead we import them by ID.  Replace these with the IDs of the objects that
 // AWS creates for you.
-export const DEFAULT_VPC_ID = 'vpc-1f773277';
-export const DEFAULT_SECURITY_GROUP_ID = 'sg-11eaac72';
-export const DEFAULT_PUBLIC_SUBNET_A_ID = 'subnet-c0ae25ba';
-export const DEFAULT_PUBLIC_SUBNET_B_ID = 'subnet-f177a9bd';
-export const DEFAULT_PUBLIC_SUBNET_C_ID = 'subnet-b086c9d9';
-export const DEFAULT_VPC_ID_US_EAST_1 = 'vpc-54696e2e';
+export const DEFAULT_VPC_ID = 'vpc-091eacfe30411bd9e';
+export const DEFAULT_SECURITY_GROUP_ID = 'sg-083db94f7abef5ea4';
+export const DEFAULT_PUBLIC_SUBNET_A_ID = 'subnet-0073afbc2525dfe9c';
+export const DEFAULT_PUBLIC_SUBNET_B_ID = 'subnet-0ccdc6566666e5c49';
+export const DEFAULT_PUBLIC_SUBNET_C_ID = 'subnet-0f918153e3b5dd083';
+export const DEFAULT_VPC_ID_US_EAST_1 = 'vpc-09e10bf6f20d2f32b';
 
 // all the domains under which we serve the product
 export const CORD_COM_DOMAINS = [
-  'cord.com',
+  '001048.xyz',
   'getradical.co',
   'cord.so',
   'cord.fyi',
@@ -40,14 +40,14 @@ export const CORD_COM_DOMAINS = [
 export const PRIMARY_DOMAIN_NAME = CORD_COM_DOMAINS[0];
 
 // domains for which we set up gmail
-export const GMAIL_DOMAINS = ['cord.com', 'cord.so', 'getradical.co'];
+export const GMAIL_DOMAINS = ['001048.xyz', 'cord.so', 'getradical.co'];
 
 // Domain TXT records, for Google site verification and such things
 export const TXT_RECORDS = {
   'getradical.co': [
     'google-site-verification=BtgOe3c6_AitAdNHNDU-2dedVumtkfO5OAHpnUNrEyM',
   ],
-  'cord.com': [
+  '001048.xyz': [
     'google-site-verification=o0E3i6wuU7HmxGIf_D7jLS089pFF7l19xfj8OebZ8ds',
     'google-site-verification=33uewWcG3InRmPHAs8TUHCjGTHZonvQzd7MxjPZSaEo',
     'OSSRH-82140',
@@ -65,7 +65,7 @@ export const DOMAIN_KEYS = {
     google:
       'v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA9UaUXI2l/R6DevMnY5lLzBGSmaK3sS5l1TGNMTu/oSlPTEaNJyiDt3b3zNrmoqWpMziPL6O5WwAG+l8CowD7gAnvjHujrIcPyP+EQ2k7+wh2pHk7prgITmTurljQKi2VedEfbRyT4u7UFctazXU0k4axUZGIjiQwrEAWR4ubgg9KEhZrFWPszOKeHTUsF9KahoasIJoPFfDS1FAiDYJcMDXAKg+4RjKM9aH42ADHht/gx98oQe4uwtJuCmfo/IvS5txTdRZMBeQ8Aip4jRRzqzdJVTTzsCE6eOnlsHyIpfWVtHK8uO41Est2s76EhpikVGt3NMRdsbHiJNgVYmmaCwIDAQAB',
   },
-  'cord.com': {
+  '001048.xyz': {
     // google = Google (our email)
     google:
       'v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiwzgkiUn2tEnh417+3ate4MfoK72XsUU2PKXAyQ8BOzmb3AcpnrYcyafFLWGxSZfFvai3F2PcRGe02JWDq2+x7YlS/JICm6vyyofM/F1qu1/YZv2+7xNyDEx0R2ccQGgOXrczX2ecWu7aHnCRWgQB0UtKE/78OYXEvoKeSQnFjmeY2v4KGu1W35gQ9o7Y44jNJrXKrsPTV+iIwuoaqh/F2zsDBgt0izEiiQcSaNJyXx3RKinQDhlKMTCR9gM4yQ4Zmi+S+M4BrZZ6WZD0P1sBiO5vfs4k7zCwWr2c+MLYwPIexw12T6socOtqcAjoHLkZ3gYHCGzNIz3Ct6aM/is4wIDAQAB',
@@ -99,7 +99,7 @@ export const SPF_RECORDS: SpfType = {
   // amazonses.com = Loops (marketing)
   // sendgrid.net = Sendgrid (product notifications)
   default: 'v=spf1 include:_spf.google.com ~all',
-  'cord.com': 'v=spf1 include:_spf.google.com ~all',
+  '001048.xyz': 'v=spf1 include:_spf.google.com ~all',
   'cord.so': {
     '@': 'v=spf1 include:_spf.google.com ~all',
     envelope: 'v=spf1 include:amazonses.com ~all',
@@ -120,11 +120,11 @@ export const SENDGRID_INBOUND_WEBHOOK_SECRET_KEY_REF_NAME =
   'SendgridInboundWebhookSecretKey';
 
 export const CORD_COM_WILDCARD_CERTIFICATE_US_EAST_1 =
-  'arn:aws:acm:us-east-1:869934154475:certificate/179f1ac1-4c87-429c-87fd-e3b9a2af4f0b';
+  'arn:aws:acm:us-east-1:026090525299:certificate/a0dccd74-3e3c-4bc9-8e77-140853d30be5';
 export const STAGING_CORD_COM_WILDCARD_CERTIFICATE_US_EAST_1 =
-  'arn:aws:acm:us-east-1:869934154475:certificate/6247511e-1ff8-4ca4-a008-b17cb7c1346b';
+  'arn:aws:acm:us-east-1:026090525299:certificate/630ea315-e4ec-4adc-a1a2-699c1a049618';
 export const LOADTEST_CORD_COM_WILDCARD_CERTIFICATE_US_EAST_1 =
-  'arn:aws:acm:us-east-1:869934154475:certificate/793e84be-608a-4e54-bdee-efadbc068510';
+  'arn:aws:acm:us-east-1:026090525299:certificate/24fa8df8-b188-4558-9c4a-f99d88309944';
 
 type ScalingConstraints = {
   minCapacity: number;
