@@ -43,9 +43,7 @@ export const prodReplica = define(() => {
     ],
     deletionProtection: true,
     removalPolicy: RemovalPolicy.RETAIN,
-    credentials: RDS.Credentials.fromSecret(
-      makeDatabaseSecret('prod-replica-1'),
-    ),
+    credentials: RDS.Credentials.fromSecret(makeDatabaseSecret('prod-replica')),
     allowMajorVersionUpgrade: true,
     monitoringInterval: Duration.seconds(60),
     cloudwatchLogsExports: ['postgresql', 'upgrade'],
