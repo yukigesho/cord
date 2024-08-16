@@ -8,7 +8,7 @@ import { vanta } from 'ops/aws/src/radical-stack/vanta.ts';
 
 export const fileUploadsBucket = define(() => {
   const bucket = new S3.Bucket(radicalStack(), 'fileUploadsBucket', {
-    bucketName: `${S3_BUCKET_PREFIX}radical-stack-fileuploads-wumx9efffh4z`,
+    bucketName: `${S3_BUCKET_PREFIX}radical-stack-fileuploads`,
     blockPublicAccess: S3.BlockPublicAccess.BLOCK_ALL,
     cors: CORS_RULES,
     encryption: S3.BucketEncryption.S3_MANAGED,

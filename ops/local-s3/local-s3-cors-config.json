@@ -1,9 +1,19 @@
 {
   "CORSRules": [
     {
-      "AllowedOrigins": ["*"],
-      "AllowedHeaders": ["*"],
-      "AllowedMethods": ["GET", "POST", "PUT", "DELETE", "HEAD"]
+      "AllowedOrigins": [
+        "*"
+      ],
+      "AllowedHeaders": [
+        "*"
+      ],
+      "AllowedMethods": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE",
+        "HEAD"
+      ]
     }
   ]
 }

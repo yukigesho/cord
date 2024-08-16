@@ -40,7 +40,7 @@ const redirects = {
   '/customization/css-variables': '/reference/css-variables',
   '/customization/page-titles': '/customization/add-custom-page-title',
   '/customization/redirect-uri': '/customization/redirect-link',
-  '/how-to/custom-s3-bucket': '/customization/s3-bucket',
+  '/how-to/cord-api-custom-s3-bucket': '/customization/s3-bucket',
   '/how-to/custom-redirect-link': '/customization/redirect-link',
   '/how-to/css-customization': '/customization/css',
   '/how-to/add-custom-page-title': '/customization/add-custom-page-title',

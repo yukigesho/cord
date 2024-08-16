@@ -151,11 +151,11 @@ aws s3 rb s3://cord-api-aws-cloudtrail-logs-026090525299-eac040ca
 aws s3 rm s3://cord-api-cord-elb-query-results --recursive
 aws s3 rb s3://cord-api-cord-elb-query-results
 
-aws s3 rm s3://cord-api-cord-public-uploads --recursive
-aws s3 rb s3://cord-api-cord-public-uploads
+aws s3 rm s3://cord-api-cord-api-public-uploads --recursive
+aws s3 rb s3://cord-api-cord-api-public-uploads
 
-aws s3 rm s3://cord-api-radical-stack-fileuploads-wumx9efffh4z --recursive
-aws s3 rb s3://cord-api-radical-stack-fileuploads-wumx9efffh4z
+aws s3 rm s3://cord-api-radical-stack-fileuploads --recursive
+aws s3 rb s3://cord-api-radical-stack-fileuploads
 
 aws s3 rm s3://cord-api-aws-cloudtrail-logs-869934154475-eac040ca --recursive
 aws s3 rb s3://cord-api-aws-cloudtrail-logs-869934154475-eac040ca

@@ -9,7 +9,7 @@ import { S3_BUCKET_PREFIX } from 'ops/aws/src/radical-stack/Config.ts';
 
 export const publicUploadsBucket = define(() => {
   const bucket = new S3.Bucket(radicalStack(), 'publicUploadsBucket', {
-    bucketName: `${S3_BUCKET_PREFIX}cord-public-uploads`,
+    bucketName: `${S3_BUCKET_PREFIX}cord-api-public-uploads`,
     blockPublicAccess: S3.BlockPublicAccess.BLOCK_ALL,
     cors: CORS_RULES,
     encryption: S3.BucketEncryption.S3_MANAGED,

@@ -72,7 +72,7 @@ const originalMigrationNames = [
   '20221010160957-drop-isUpdateLocked.js',
   '20221011095805-restore-isUpdateLocked.js',
   '20221011103352-remove-profiles-view.js',
-  '20221011123922-customer-custom-s3-bucket.js',
+  '20221011123922-customer-cord-api-custom-s3-bucket.js',
   '20221011161516-drop-isUpdateLocked-again.js',
   '20221012125942-customer-custom-segment-write-key.js',
   '20221020085619-drop_messages_seen_table.js',
