@@ -1,4 +1,4 @@
 providers = ['...']
 
 [phases.setup]
-nixPkgs = ['...', 'mkcert', 'jq']
+nixPkgs = ['...', 'mkcert', 'jq', 'docker-compose']
