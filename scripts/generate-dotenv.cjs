@@ -6,13 +6,19 @@
 // development. You can also define the location of the .env file with the
 // `--envFile` option. It defaults to .env in the current working directory.
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const fs = require('fs').promises;
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const child_process = require('child_process');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const dotenv = require('dotenv');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const yargs = require('yargs');
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { version: packageVersion } = require('../package.json');
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { replaceSecretsInObject } = require('./lib/secrets.cjs');
 
 const POSTGRESQL_PORT = 5432;
@@ -153,8 +159,8 @@ function buildProdEnv(commitHash) {
     EMAIL_LINKS_TOKEN_SECRET: secrets.EMAIL_LINKS_TOKEN.secret,
     JWT_SIGNING_SECRET: secrets.SESSION.jwt_signing_secret,
     S3_REGION: 'eu-west-2',
-    S3_BUCKET: 'radical-stack-fileuploads-wumx9efffh4z',
-    S3_PUBLIC_BUCKET: 'cord-public-uploads',
+    S3_BUCKET: 'radical-stack-fileuploads',
+    S3_PUBLIC_BUCKET: 'cord-api-public-uploads',
     S3_ENDPOINT: 'https://s3.<REGION>.amazonaws.com',
     S3_USE_PATH_BASED_URLS: false,
     CLOUDWATCH_LOGLEVEL: 'debug',
@@ -318,14 +324,12 @@ function buildDevEnv(commitHash) {
     CONSOLE_SERVER_HOST: 'local.cord.com:8171',
     MARKETING_SERVER_HOST: 'local.cord.com:8117',
     CORD_TO_HOST: 'local.cord.com:8161',
-    PUBLIC_UPLOADS_HOST: 'local.cord.com:8147',
     DOCS_SERVER_HOST: 'local.cord.com:8191',
     SLACK_ADMIN_LOGIN_REDIRECT_HOST: 'admin.staging.cord.com',
     SLACK_APP_REDIRECT_HOST: 'api.staging.cord.com',
     DOCS_AI_CHATBOT_SERVER_HOST: 'http://localhost:8209',
     CLACK_SERVER_HOST: 'local.cord.com:3000',
     COMMUNITY_SERVER_HOST: 'local.cord.com:3000',
-
     CORD_OPS_SLACK_CHANNEL_ID: undefined,
     PROD_CHANGES_SLACK_CHANNEL_ID: undefined,
     CORD_SECURITY_SLACK_CHANNEL_ID: undefined,
@@ -333,14 +337,16 @@ function buildDevEnv(commitHash) {
     CORD_ALL_CUSTOMERS_SLACK_CHANNEL_ID: undefined,
     CORD_CLIENT_REQUESTS_SLACK_CHANNEL_ID: undefined,
     CORD_DOCS_SEARCH_SLACK_CHANNEL_ID: 'C0546PL7Y2C', // #docs-search-noise
-
     SLACK_OAUTH_STATE_SIGNING_SECRET: 'Rolo is the worlds best sausage!',
     EMAIL_LINKS_TOKEN_SECRET: 'Super Secret Secret Squirrel',
     JWT_SIGNING_SECRET: 'SpongeBob_signs_your_jwt',
-    S3_ENDPOINT: 'https://local.cord.com:8147',
+    //S3
+    PUBLIC_UPLOADS_HOST: 'https://s3.eu-west-2.amazonaws.com',
+    S3_ENDPOINT: 'https://s3.<REGION>.amazonaws.com',
     S3_USE_PATH_BASED_URLS: true,
     S3_ACCESS_KEY_ID: 's3_access_key',
     S3_ACCESS_KEY_SECRET: 's3_access_secret',
+    //
     CLOUDWATCH_LOGLEVEL: undefined,
     CLOUDWATCH_LOG_GROUP_NAME: undefined,
     ADMIN_SERVER_STATIC_PATH: undefined,
